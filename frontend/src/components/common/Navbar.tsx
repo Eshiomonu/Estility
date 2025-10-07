@@ -32,7 +32,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center w-[553px] h-[20px] gap-[35px]">
+        <ul className="hidden md:flex items-center h-[20px] gap-[35px]">
           {sortedLinks.map((link, idx) => (
             <motion.li
               key={link.id}
@@ -42,7 +42,7 @@ export default function Navbar() {
             >
               <a
                 href={link.url}
-                className="w-[62px] h-[20px] flex items-center justify-center text-white opacity-80 font-sora font-semibold text-[16px] leading-[20px] tracking-[-0.02em] px-2"
+                className=" h-[20px] flex items-center justify-center text-white opacity-80 font-sora font-semibold text-[16px] leading-[20px] tracking-[-0.02em] px-2"
               >
                 {link.label}
               </a>

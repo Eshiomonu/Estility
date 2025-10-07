@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import axios from "axios";
 
-// --- Interfaces (as above) ---
 export interface FaqItem {
   id: number;
   documentId: string;
@@ -38,27 +37,31 @@ export interface FaqApiResponse {
 export function useFaq() {
   const [categories, setCategories] = useState<FaqCategory[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<FaqCategory | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
+  
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
-        const response = await axios.get<FaqApiResponse>(
-          `${import.meta.env.VITE_API_URL}/api/faq-categories?populate=*`
+        setLoading(true);
+        const { data } = await axios.get<FaqApiResponse>(
+          `${import.meta.env.VITE_API_URL}/api/faq-categories?populate[faqs]=*`
         );
 
-        const data = response.data.data;
+        if (data && Array.isArray(data.data)) {
+          setCategories(data.data);
 
-        setCategories(data);
-
-
-        const firstWithFaqs = data.find((cat) => cat.faqs.length > 0) || data[0] || null;
-        setSelectedCategory(firstWithFaqs);
+          // Automatically select first category that has FAQs
+          const firstWithFaqs = data.data.find((cat) => cat.faqs.length > 0) ?? data.data[0] ?? null;
+          setSelectedCategory(firstWithFaqs);
+        } else {
+          setError("No FAQ categories found.");
+        }
       } catch (err) {
-        console.error("Failed to load FAQs:", err);
-        setError("Failed to load FAQs");
+        console.error("Failed to fetch FAQs:", err);
+        setError("Unable to load FAQs at the moment.");
       } finally {
         setLoading(false);
       }
@@ -67,16 +70,24 @@ export function useFaq() {
     fetchFaqs();
   }, []);
 
-  const handleCategorySelect = (slug: string) => {
-    const found = categories.find((cat) => cat.Slug === slug);
-    setSelectedCategory(found || null);
-  };
 
-  const filteredFaqs = selectedCategory
-    ? selectedCategory.faqs.filter((faq) =>
-        faq.question.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : [];
+  const handleCategorySelect = useCallback(
+    (slug: string) => {
+      const found = categories.find((cat) => cat.Slug === slug);
+      setSelectedCategory(found || null);
+    },
+    [categories]
+  );
+
+  
+  const filteredFaqs = useMemo(() => {
+    if (!selectedCategory) return [];
+    if (!searchQuery.trim()) return selectedCategory.faqs;
+
+    return selectedCategory.faqs.filter((faq) =>
+      faq.question.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [selectedCategory, searchQuery]);
 
   return {
     categories,
