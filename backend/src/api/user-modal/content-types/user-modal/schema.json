@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "user_modals",
+  "info": {
+    "singularName": "user-modal",
+    "pluralName": "user-modals",
+    "displayName": "User Modal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "user_playstore_link": {
+      "type": "component",
+      "component": "hero.playstore",
+      "repeatable": true
+    },
+    "user_appstore_cta": {
+      "type": "component",
+      "component": "hero.appstore",
+      "repeatable": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "user_cta": {
+      "type": "component",
+      "component": "navigation.cta-button",
+      "repeatable": true
+    },
+    "barcode_image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "barcode_cta_link": {
+      "type": "component",
+      "component": "navigation.cta-button",
+      "repeatable": true
+    }
+  }
+}

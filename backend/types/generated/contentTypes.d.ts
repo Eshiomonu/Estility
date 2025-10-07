@@ -1005,6 +1005,43 @@ export interface ApiTopVendorTopVendor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiUserModalUserModal extends Struct.SingleTypeSchema {
+  collectionName: 'user_modals';
+  info: {
+    displayName: 'User Modal';
+    pluralName: 'user-modals';
+    singularName: 'user-modal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    barcode_cta_link: Schema.Attribute.Component<'navigation.cta-button', true>;
+    barcode_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-modal.user-modal'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user_appstore_cta: Schema.Attribute.Component<'hero.appstore', true>;
+    user_cta: Schema.Attribute.Component<'navigation.cta-button', true>;
+    user_playstore_link: Schema.Attribute.Component<'hero.playstore', true>;
+  };
+}
+
 export interface ApiWhoBuiltForWhoBuiltFor extends Struct.SingleTypeSchema {
   collectionName: 'who_built_fors';
   info: {
@@ -1593,6 +1630,7 @@ declare module '@strapi/strapi' {
       'api::step.step': ApiStepStep;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'api::top-vendor.top-vendor': ApiTopVendorTopVendor;
+      'api::user-modal.user-modal': ApiUserModalUserModal;
       'api::who-built-for.who-built-for': ApiWhoBuiltForWhoBuiltFor;
       'api::why-estility.why-estility': ApiWhyEstilityWhyEstility;
       'plugin::content-releases.release': PluginContentReleasesRelease;
