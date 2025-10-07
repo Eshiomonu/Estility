@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_titles",
+  "info": {
+    "singularName": "page-title",
+    "pluralName": "page-titles",
+    "displayName": "PageTitle"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page": {
+      "type": "uid",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

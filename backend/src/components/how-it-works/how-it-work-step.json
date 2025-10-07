@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_how_it_works_how_it_work_steps",
+  "info": {
+    "displayName": "how_it_work_step"
+  },
+  "options": {},
+  "attributes": {
+    "step_title": {
+      "type": "string"
+    },
+    "step_description": {
+      "type": "richtext"
+    },
+    "step_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

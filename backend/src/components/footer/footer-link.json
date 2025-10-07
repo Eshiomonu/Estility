@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_footer_footer_links",
+  "info": {
+    "displayName": "Company Links"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "why_estilities",
+  "info": {
+    "singularName": "why-estility",
+    "pluralName": "why-estilities",
+    "displayName": "Why Estility"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "cards": {
+      "type": "component",
+      "component": "why-estility.why-estility-card",
+      "repeatable": true
+    }
+  }
+}

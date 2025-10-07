@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_footer_support_links",
+  "info": {
+    "displayName": "Support Links"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

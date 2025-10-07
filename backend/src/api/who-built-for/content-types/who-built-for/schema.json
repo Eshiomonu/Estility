@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "who_built_fors",
+  "info": {
+    "singularName": "who-built-for",
+    "pluralName": "who-built-fors",
+    "displayName": "Who Built For"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "component": "who-is-built-for.card",
+      "repeatable": true
+    }
+  }
+}

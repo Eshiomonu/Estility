@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "top_vendors",
+  "info": {
+    "singularName": "top-vendor",
+    "pluralName": "top-vendors",
+    "displayName": "TopVendor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "website": {
+      "type": "string"
+    }
+  }
+}

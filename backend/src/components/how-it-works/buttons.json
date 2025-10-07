@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_how_it_works_buttons",
+  "info": {
+    "displayName": "button_with_steps"
+  },
+  "options": {},
+  "attributes": {
+    "button_name": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "component",
+      "component": "how-it-works.how-it-work-step",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

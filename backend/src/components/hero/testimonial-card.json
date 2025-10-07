@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_hero_testimonial_cards",
+  "info": {
+    "displayName": "Testimonial Card"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "heroes",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heroes",
+    "displayName": "Hero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Playstore": {
+      "type": "component",
+      "component": "hero.playstore",
+      "repeatable": true
+    },
+    "Appstore": {
+      "type": "component",
+      "component": "hero.appstore",
+      "repeatable": true
+    },
+    "testifier_text": {
+      "type": "string"
+    },
+    "Testifier_image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "carousel_image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

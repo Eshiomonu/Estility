@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_global_notifications",
+  "info": {
+    "displayName": "Notification"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "time": {
+      "type": "time"
+    }
+  },
+  "config": {}
+}

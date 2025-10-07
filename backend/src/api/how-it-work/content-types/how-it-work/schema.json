@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "how_it_works",
+  "info": {
+    "singularName": "how-it-work",
+    "pluralName": "how-it-works",
+    "displayName": "How It Work"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "cta": {
+      "type": "component",
+      "component": "navigation.cta-button",
+      "repeatable": true
+    },
+    "buttons": {
+      "type": "component",
+      "component": "how-it-works.buttons",
+      "repeatable": true
+    }
+  }
+}

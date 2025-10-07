@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_hero_appstores",
+  "info": {
+    "displayName": "appstore"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

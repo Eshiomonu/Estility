@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_hero_playstores",
+  "info": {
+    "displayName": "playstore"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_navigation_cta_buttons",
+  "info": {
+    "displayName": "cta_button"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ]
+    }
+  },
+  "config": {}
+}
