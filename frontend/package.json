@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --no-lint",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@portabletext/react": "^4.0.3",
+    "@portabletext/types": "^2.0.15",
     "axios": "^1.12.2",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
