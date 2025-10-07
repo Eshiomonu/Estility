@@ -35,7 +35,6 @@ export interface FaqApiResponse {
   };
 }
 
-// --- Hook implementation ---
 export function useFaq() {
   const [categories, setCategories] = useState<FaqCategory[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<FaqCategory | null>(null);
