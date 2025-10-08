@@ -6,7 +6,7 @@ module.exports = [
       enabled: true,
       origin: [
         'https://estility-4v35.vercel.app', 
-        'http://localhost:3000'                  // for local dev
+        'http://localhost:3000',
       ],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
